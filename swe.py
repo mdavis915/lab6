@@ -6,7 +6,6 @@ def decoder(password):
         new_p += new_d
     return new_p
 
-
 def main():
     
     while True:
@@ -18,3 +17,5 @@ def main():
         
         if option == 1:
             pass
+
+        print("Hello")
