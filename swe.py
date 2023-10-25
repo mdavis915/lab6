@@ -7,6 +7,13 @@ def encoder(password):
         new_p += new_d
     return new_p
 
+def decoder(password):
+    decoded_pass = ''
+    for n in password:
+        decoded_pass += str(int(n) - 3)
+
+    return decoded_pass
+
 
 def main():
     
@@ -19,5 +26,10 @@ def main():
         
         if option == 1:
             pass
+        if option == 2:
+            decoded_pass = decoder(encoder(password))
+            print("The encoded password is" + encoder(password) + ", and the original password is " + decoded_pass)
 
-        print("Hello")
+
+        option = input("Please enter an option: ")
+
