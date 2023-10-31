@@ -12,7 +12,7 @@ functions of version control systems
 def encode(password):
     new_p = ""
     for digit in password:
-        if digit >= 7:
+        if int(digit) >= 7:
             new_d = str((int(digit) + 3) % 10)
         else:
             new_d = str(int(digit) + 3)
@@ -24,11 +24,11 @@ def encode(password):
 def decoder(password):
     decoded_pass = ''
     for n in password:
-        if n == 2:
+        if int(n) == 2:
             decoded_pass += 9
-        elif n == 1:
+        elif int(n) == 1:
             decoded_pass += 8
-        elif n == 0:
+        elif int(n) == 0:
             decoded_pass += 7
         else:
             decoded_pass += str(int(n) - 3)
@@ -45,7 +45,7 @@ def main():
     
     password = ""
     menu()
-    option = input("Please enter an option: ")
+    option = int(input("Please enter an option: "))
     
     while (option == 1) or (option == 2):
         # If the user chooses 1, it encodes the password they entered
@@ -53,12 +53,12 @@ def main():
             password = input("Please enter your password to encode: ")
             encoded_password = encode(password)
             print("Your password has been encoded and stored!")
-        # If the user chooses 2, it ouputs the encoded password and the original password
+        # If the user chooses 2, it outputs the encoded password and the original password
         elif option == 2:
             decoded_password = decoder(encoded_password)
-            print("The encoded password is" + encoded_password + ", and the original password is" + decoded_password)
+            print("The encoded password is " + encoded_password + ", and the original password is " + decoded_password + ".")
         menu()
-        option = input("Please enter an option: ")
+        option = int(input("Please enter an option: "))
         
 if __name__ == '__main__':
     main()
