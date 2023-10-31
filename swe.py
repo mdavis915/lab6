@@ -24,11 +24,11 @@ def encode(password):
 def decoder(password):
     decoded_pass = ''
     for n in password:
-        if int(n) == 2:
+        if n == 2:
             decoded_pass += 9
-        elif int(n) == 1:
+        elif n == 1:
             decoded_pass += 8
-        elif int(n) == 0:
+        elif n == 0:
             decoded_pass += 7
         else:
             decoded_pass += str(int(n) - 3)
