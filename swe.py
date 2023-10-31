@@ -47,7 +47,7 @@ def main():
     menu()
     option = int(input("Please enter an option: "))
     
-    while (option == 1) or (option == 2):
+    while True:
         # If the user chooses 1, it encodes the password they entered
         if option == 1:
             password = input("Please enter your password to encode: ")
@@ -57,6 +57,11 @@ def main():
         elif option == 2:
             decoded_password = decoder(encoded_password)
             print("The encoded password is " + encoded_password + ", and the original password is " + decoded_password + ".")
+        # If the user chooses 3, the program will exit
+        elif option == 3:
+            break
+        else:
+            print("Invalid option. Please enter either 1, 2, or 3.")
         menu()
         option = int(input("Please enter an option: "))
         
