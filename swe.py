@@ -2,9 +2,9 @@
 Author: Maria Davis
 Partner: Alexis Simpson
 Assignment: Lab 6
-Date Due: 11/31/2023
+Date Due: 10/31/2023
 Class: COP3502, Section 12331
-About: This program implements a a simplified password encoder/decoder program to practice the
+About: This program implements a simplified password encoder/decoder program to practice the
 functions of version control systems
 '''
 
@@ -24,12 +24,12 @@ def encode(password):
 def decoder(password):
     decoded_pass = ''
     for n in password:
-        if n == 2:
-            decoded_pass += 9
-        elif n == 1:
-            decoded_pass += 8
-        elif n == 0:
-            decoded_pass += 7
+        if int(n) == 2:
+            decoded_pass += '9'
+        elif int(n) == 1:
+            decoded_pass += '8'
+        elif int(n) == 0:
+            decoded_pass += '7'
         else:
             decoded_pass += str(int(n) - 3)
 
@@ -62,6 +62,7 @@ def main():
             break
         else:
             print("Invalid option. Please enter either 1, 2, or 3.")
+        print()
         menu()
         option = int(input("Please enter an option: "))
         
